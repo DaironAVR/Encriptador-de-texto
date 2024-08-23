@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <meta name="description" content="Una aplicación web para encriptar y desencriptar texto fácilmente">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./Img/archivo-cifrado.png" type="image/png">
+</head>
+<body>
+    <header>  
+        <img src="./Img/politica-de-privacidad.png" alt="Logo del encriptador">
+        <h1>Encriptador de texto</h1>  
+    </header>
+    <main class="contenido_principal">
+        <section class="zona-texto-in">
+            <textarea class="Texto_in" type="text" id="userInput" placeholder="Escribe algo aqui..." oninput="verificarTexto()"></textarea>
+                    
+            <p class="Aviso_in" id="notificacion" >⚠️Solo letras minúsculas y sin acentos</p>
+            <div class="Buttons_container">
+                <button onclick="reemplazarVocales();" class="Encriptar_button" id="button_e">Encriptar</button>
+                <button onclick="restaurarTexto();" class="Desencriptar_button" id="button_d">Desencriptar</button>
+            </div>
+        </section>
+        <section class="zona-respuesta">
+            <p class="bloque_resultado" id="resultado" >
+            Ningún mensaje fue encontrado. Ingresa <strong class="bloque_resultado_c">el texto que desees encriptar o desencriptar.</strong>
+            </p>
+            <button class="copiar_button" onclick="copiarTexto()" id="copiarbutton" disabled>Copiar</button>
+            <div id="indicacion">¡Texto copiado!</div>
+        </section>
+    </main>
+    <footer>
+        <p>Desarrollado por: Dairon Alessandro Vargas Rincon</p>
+        <a href="https://github.com/DaironAVR" target="_blank">
+            <img src="./Img/github.png" alt="Icono de GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/dairon-alessandro-vargas-rincon-062341315/" target="_blank">
+            <img src="./Img/linkedin.png" alt="Icono de LinkedIn">
+        </a>
+    </footer>
+    <script src="Encriptador.js" defer></script>
+</body>
+</html>

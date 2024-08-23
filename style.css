@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Jersey+10&family=Matemasie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Matemasie&display=swap');
+
+:root {
+    --fondo: #f0f0f5;
+    --texto: #333;
+    --primario: #4CAF50;
+    --secundario: #8BC34A;
+    --terciario: #5a5a5a;
+    --fondo-input: #fff;
+    --borde: #ccc;
+    --boton-hover: #45a049;
+    --boton-disabled: #a5d6a7; 
+    --fuente-mate:"Matemasie", sans-serif;
+    --fuente-jer:"Jersey 10", sans-serif;
+    --fuente-edu:"Edu VIC WA NT Beginner", cursive;
+}
+
+
+
+body {
+    
+    background-color: var(--fondo);
+    color: var(--texto);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* Estilo del header */
+header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+header img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-family: var(--fuente-jer);
+    font-size: 40px;
+    margin: 0;
+    color: var(--primario);
+}
+
+/* Contenido principal */
+.contenido_principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap; 
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 130px;
+}
+
+/* Zona de texto */
+.zona-texto-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:50%; 
+    margin-right: 20px;
+}
+
+
+.Texto_in {
+    width: 100%;
+    overflow: auto;
+    padding: 15px;
+    background-color: var(--fondo-input);
+    border: 2px solid var(--borde);
+    color: var(--texto);
+    font-family: var(--fuente-jer);
+    font-size: 40px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    min-height: 400px; 
+    resize: none;
+}
+
+
+.Aviso_in {
+    font-family: var(--fuente-jer);
+    font-size: 30px;
+    color: var(--terciario);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Buttons_container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.Encriptar_button, .Desencriptar_button {
+    padding: 15px 25px;
+    background-color: var(--primario);
+    color: #fff;
+    border: 2px solid var(--primario);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--fuente-jer);
+    font-size: 30px;
+    flex-grow: 1; 
+}
+
+.Encriptar_button:hover, .Desencriptar_button:hover {
+    background-color: var(--boton-hover);
+}
+
+.Encriptar_button:disabled, .Desencriptar_button:disabled {
+    background-color: var(--boton-disabled);
+    color: #fff;
+    cursor: not-allowed;
+}
+
+/* Zona de respuesta */
+.zona-respuesta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%; 
+}
+
+.bloque_resultado {
+    background-color: var(--fondo-input);
+    border: 2px solid var(--borde);
+    padding: 20px;
+    height: 100%;
+    font-family: var(--fuente-jer);
+    font-size: 40px;
+    color: var(--texto);
+    border-radius: 10px;
+    box-sizing: border-box;
+    min-height: 350px; 
+   
+}
+
+.copiar_button {
+    margin-top: 40px;
+    padding: 15px 25px;
+    background-color: var(--fondo-input);
+    border: 2px solid var(--primario);
+    color: var(--primario);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+    
+    font-family: var(--fuente-jer);
+    font-size: 30px;
+}
+
+.copiar_button:hover {
+    background-color: var(--boton-hover);
+    color: #fff;
+}
+#indicacion {
+    display: none; 
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+/* Estilo del footer */
+footer {
+    
+    font-family: var(--fuente-edu);
+    
+    text-align: center;
+    font-size: 24px;
+    color: var(--texto);
+    padding:10px 0px;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px 0 ;
+}
+
+footer a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--primario);
+    font-weight: bold;
+}
+
+footer a img {
+    width: 30px;
+    height: 30px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .contenido_principal {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .zona-texto-in, .zona-respuesta {
+        width: 95%;
+        padding: 0% 10% ;
+    }
+    .Encriptar_button, .Desencriptar_button, .copiar_button {
+        padding: 10px 15px;
+        width: 100%; 
+        margin-top: 5px;
+        font-size: 25px;
+    }
+    header {
+        top: 10px;
+        left: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+    footer{
+        padding: 10px 0px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .contenido_principal{
+        margin-top:70px;
+    }
+    
+    .Texto_in, .bloque_resultado {
+        padding: 10px;
+        min-height: 200px;
+        font-size: 30px;
+    }
+    .zona-texto-in{
+        padding: 10px 0px 15px 20px;
+        
+        
+    }
+    .zona-respuesta{
+        margin-top: -50px;
+        padding: auto;
+    }
+    .Encriptar_button, .Desencriptar_button, .copiar_button {
+        padding: 10px 15px;
+        width: 100%; 
+        margin-top: 5px;
+        font-size: 25px;
+    }
+    header img {
+        width: 50px;
+        margin-right: 10px;
+    }
+}
